@@ -117,6 +117,16 @@ public class GroceryList {
         return findItem(item) >= 0 ? true : false;
     }
 
+    public void searchForItem() {
+        System.out.print("Presence of which item would you like to check in the list? ");
+        String itemToSearch = scanner.nextLine();
+        if(isInList(itemToSearch)) {
+            System.out.println(itemToSearch + " is present on your list at the position " + (groceryList.indexOf(itemToSearch) + 1));
+        } else {
+            System.out.println("There is no " + itemToSearch + " on your list");
+        }
+    }
+
     private boolean isInList(int position) {
         return position >= 0 && position < groceryList.size() ? true : false;
     }
